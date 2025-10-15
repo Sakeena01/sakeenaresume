@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakeena - junior Frontend Developer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #9be3c1; /* Light gray background */
+        }
+        /* Custom scrollbar styling for better aesthetic */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9ad2dc;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ddbd9;
+        }
+        /* Highlight the active navigation link */
+        .nav-link.active {
+            font-weight: 600;
+            color: #056051; /* Blue-700 */
+            border-bottom: 3px solid #056043;
+        }
+        /* Style for the content pages/sections */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .content-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Header and Navigation (Fixed on top for better user experience) -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- Title/Name -->
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-2 md:mb-0">Sakeena</h1>
+            
+            <!-- Navigation Links -->
+            <nav class="flex space-x-4 sm:space-x-8 text-lg">
+                <a href="#" data-page="summary" class="nav-link active py-2 transition duration-300 hover:text-blue-700 text-gray-600">Summary</a>
+                <a href="#" data-page="projects" class="nav-link py-2 transition duration-300 hover:text-blue-700 text-gray-600">Projects</a>
+                <a href="#" data-page="skills" class="nav-link py-2 transition duration-300 hover:text-blue-700 text-gray-600">Skills</a>
+                <a href="#" data-page="education" class="nav-link py-2 transition duration-300 hover:text-blue-700 text-gray-600">Education</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Contact/Info Card (Always visible) -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-8 border-t-4 border-blue-600">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Frontend Developer</h2>
+                    <p class="text-gray-500 mt-1">JavaScript | React | TypeScript | Architecture</p>
+                </div>
+                <div class="mt-4 sm:mt-0 text-sm text-gray-600 space-y-1">
+                    <p class="flex items-center">
+                        <svg class="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26c.49.33 1.11.33 1.6 0L21 8M3 8a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path></svg>
+                        sakeena1714@gmail.com
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Bangaluru india
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <a href="https://www.linkedin.com/in/sakeena-232559351?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="hover:underline">LinkedIn Profile</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ============================================= -->
+        <!-- 1. SUMMARY SECTION (Default Active) -->
+        <!-- ============================================= -->
+        <section id="summary-content" data-page="summary" class="content-section active bg-white p-6 md:p-8 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 border-b pb-3 mb-6">Professional Summary</h2>
+            <p class="text-gray-700 leading-relaxed text-lg">
+      "Passionate Frontend Developer with experience building responsive, user-friendly web applications using modern technologies like React, JavaScript, HTML, and CSS. Skilled in creating intuitive interfaces, optimizing performance, and ensuring cross-browser compatibility. Dedicated to writing clean, maintainable code and continuously learning new tools and frameworks to deliver high-quality digital experiences."
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-700 mt-8 mb-4">Key Accomplishments</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                <li>Reduced application bundle size by 30% through advanced code splitting and lazy loading techniques.</li>
+                <li>Led the migration of a legacy Backbone application to a modern React/TypeScript codebase without disruption, resulting in a 45% reduction in production bugs.</li>
+                <li>Established and enforced component-driven development best practices and design system governance.</li>
+                <li>Achieved 95+ score on Lighthouse Performance metrics across all core application pages.</li>
+            </ul>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- 2. PROJECTS SECTION -->
+        <!-- ============================================= -->
+        <section id="projects-content" data-page="projects" class="content-section">
+            <h2 class="text-2xl font-bold text-gray-800 border-b pb-3 mb-6">Selected Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-8">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900">Problem slover agent</h3>
+                    <span class="text-sm text-gray-500 font-medium">html,css,JavaScript</span>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <p class="text-blue-600 font-semibold">Slover Agent and Time compiety Analyzes</p>
+                    <a href="#" target="_blank" class="text-sm text-blue-500 hover:underline">View Repository</a>
+                </div>
+                <ul class="list-disc list-outside space-y-3 text-gray-700 ml-5">
+                    <li>Intelligent Issue Analysis: Understands user queries or system problems and identifies root causes efficiently.</li>
+                    <li>Actionable Solutions: Suggests step-by-step solutions, alternative approaches, or automated fixes.</li>
+                    <li>Continuous Learning: Adapts from past cases to improve problem-solving accuracy over time.</li>
+                    
+                </ul>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900">Ai Assitant carrear guidenance</h3>
+                    <span class="text-sm text-gray-500 font-medium">html,css, node.js, express</span>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <p class="text-blue-600 font-semibold">carriear guidenance Tool</p>
+                    <a href="#" target="_blank" class="text-sm text-blue-500 hover:underline">View Live Demo</a>
+                </div>
+                <ul class="list-disc list-outside space-y-3 text-gray-700 ml-5">
+                    <li>Personalized Career Roadmaps: Analyzes user skills, experience, and interests to suggest tailored job paths and upskilling opportunities.</li>
+                    <li>Skill Gap Identification: Highlights missing skills and recommends practical courses, projects, or certifications to bridge the gaps.</li>
+                    <li>Resume & Job Support: Generates optimized resumes, ranks job opportunities, and provides guidance for interviews and applications.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- 3. SKILLS SECTION -->
+        <!-- ============================================= -->
+        <section id="skills-content" data-page="skills" class="content-section">
+            <h2 class="text-2xl font-bold text-gray-800 border-b pb-3 mb-6">Technical Skills</h2>
+
+            <div class="space-y-6">
+                
+                <!-- Skill Category: Frontend -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Frontend & Core Technologies</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">Next.js / Gatsby</span>
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Web Socket</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category: Backend -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Backend & Databases</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">Node.js / Express</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category: Tools -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Tools & Practices</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">Apache</span>
+                        <span class="skill-tag">Webpack / Vite</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Agile / Scrum</span>
+                        <span class="skill-tag">Express</span>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                .skill-tag {
+                    @apply inline-block bg-blue-100 text-blue-800 text-sm font-medium px-4 py-1 rounded-full transition duration-200 hover:bg-blue-200;
+                }
+            </style>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- 4. EDUCATION SECTION -->
+        <!-- ============================================= -->
+        <section id="education-content" data-page="education" class="content-section">
+            <h2 class="text-2xl font-bold text-gray-800 border-b pb-3 mb-6">Education</h2>
+
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900">B.E in Computer Science</h3>
+                    <span class="text-sm text-gray-500 font-medium">2023 – 2027</span>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <p class="text-blue-600 font-semibold">East Point college of Engineering</p>
+                    <p class="text-sm text-gray-500">Bangaluru india</p>
+                </div>
+                <p class="text-gray-700 leading-relaxed">
+                    Concentration in Software Engineering and Human-Computer Interaction (HCI). Relevant coursework included Advanced Data Structures, Web Application Security, and Distributed Systems.
+                </p>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 text-center text-gray-500 text-sm mt-8">
+        &copy; 2025 Alex Rivera. Built with HTML, JS, and Tailwind CSS.
+    </footer>
+
+    <!-- JavaScript for Navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            /**
+             * Hides all content sections and shows the one corresponding to the page name.
+             * @param {string} pageName - The data-page attribute value to show.
+             */
+            function showPage(pageName) {
+                // 1. Update navigation active state
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === pageName) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // 2. Update content visibility
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.dataset.page === pageName) {
+                        section.classList.add('active');
+                    }
+                });
+
+                // 3. Update URL hash without causing a page refresh
+                history.pushState(null, '', '#' + pageName);
+            }
+
+            /**
+             * Handles click events on the navigation links.
+             */
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageName = link.dataset.page;
+                    showPage(pageName);
+                });
+            });
+
+            /**
+             * Initializes the correct page based on the URL hash or defaults to 'summary'.
+             */
+            function initializePage() {
+                const hash = window.location.hash.substring(1); // Remove '#'
+                const defaultPage = 'summary';
+
+                // Check if the hash matches an existing page
+                const initialPage = Array.from(navLinks).some(link => link.dataset.page === hash) ? hash : defaultPage;
+                
+                showPage(initialPage);
+            }
+
+            // Listen for browser back/forward buttons (popstate)
+            window.addEventListener('popstate', initializePage);
+
+            // Run initialization
+            initializePage();
+        });
+    </script>
+</body>
+</html>
